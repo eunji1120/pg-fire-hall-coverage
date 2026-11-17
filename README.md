@@ -59,26 +59,27 @@ All data is public and was downloaded on 2026-11-17 (details in [data/DATA_READM
 
 - Each fire hall point falls inside a response zone of its own hall.
 - Feature counts match the source service (52 zones, 29,873 addresses).
-- [checks/independent_check.py](checks/independent_check.py) recomputes the headline numbers without QGIS, using great-circle distance on the raw GeoJSON. The results agree closely with the QGIS output, which measures in the BC Albers projection:
+- [checks/independent_check.py](checks/independent_check.py) recomputes the headline numbers without QGIS, using great-circle distance on the raw GeoJSON. The results agree closely with the QGIS output:
 
-  | Measure | QGIS (EPSG:3005) | Independent check |
+  | Measure | QGIS | Independent check |
   |---|---:|---:|
   | Over 5 km from nearest hall | 1,715 | 1,706 |
   | Over 5 km from assigned hall | 1,822 | 1,818 |
   | Nearest hall differs from assigned | 1,663 | 1,668 |
 
-- `HubDist` (from *Distance to nearest hub*) and `AsgDist` (from the `distance()` expression) are measured slightly differently; for addresses whose nearest and assigned hall are the same, they differ by at most 29 m (0.3%).
+- `HubDist` (from *Distance to nearest hub*) and `AsgDist` (from the `distance()` expression, planar in BC Albers) are measured differently; for addresses whose nearest and assigned hall are the same, they differ by at most 29 m (0.3%).
 
 ## Limitations
 
 - Straight-line distance, not drive time. Rivers, bridges and the road network are not considered, so real travel distances are longer.
+- Distance relates only to the travel part of response time; alarm handling and turnout are not included.
 - The 5 km line is a reference I chose, not a standard.
 - Address points are parcels, not people or households, and include commercial and industrial parcels.
 - This is a personal analysis, not an official City of Prince George product.
 
 ## Next steps
 
-- Road-network distance with QGIS *Service area*, and drive time using the road layer's speed limits and one-way streets.
+- Road-network distance with QGIS *Service area*, and drive time using the road layer's speed limits and one-way streets, then a comparison with actual travel times from incident data, since emergency travel speeds differ from posted limits.
 - Weight addresses by population using Statistics Canada census data.
 - Compare with historical incident locations, if available.
 
