@@ -1,0 +1,10 @@
+# Large raw downloads: recreate with `python3 data/get_data.py`
+data/civic_addresses.geojson
+data/roads.geojson
+# QGIS / SQLite temporary files
+*.gpkg-wal
+*.gpkg-shm
+*.qgz~
+*.qgs~
+.DS_Store
+__pycache__/

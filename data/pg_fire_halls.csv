@@ -1,0 +1,5 @@
+name,hall_no,address,lat,lon,source,osm_lat,osm_lon,osm_offset_m
+Prince George Fire Hall 1,1,"2012 Massey Drive, Prince George, BC",53.905145,-122.770231,City of Prince George civic address point (address from princegeorge.ca Emergency services page),53.905,-122.7695,51
+Prince George Fire Hall 2,2,"3999 5th Avenue, Prince George, BC",53.920403,-122.793643,City of Prince George civic address point (address from princegeorge.ca Emergency services page),53.9202,-122.7935,24
+Prince George Fire Hall 3,3,"3778 Konrath Road, Prince George, BC",53.860806,-122.803936,City of Prince George civic address point (address from princegeorge.ca Emergency services page),53.8608,-122.8044,30
+Prince George Fire Hall 4,4,"6555 Kelly Road South, Prince George, BC",53.988485,-122.801455,City of Prince George civic address point (address from princegeorge.ca Emergency services page),53.9884,-122.8017,19
